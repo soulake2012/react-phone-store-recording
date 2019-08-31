@@ -1,33 +1,119 @@
-.App {
-  text-align: center;
+:root {
+	--mainBlue: #2a2a72;
+	--ightBlue: #009ffd;
+	--mainWhite: #f3f3f3;
+	--mainDark: #232528;
+	--mainYellow: #ffa400;
+	--mainGray: #444;
+	--middleGray: #666;
+	--lightGray: #999;
+	--mainRed: #dc3545;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.blur-to {
+	z-index: 1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tableCart {
+	box-shadow: 0 0 5px #333;
 }
 
-.App-link {
-  color: #61dafb;
+.borderLineTop {
+	border-top: 1px solid var(--lightGray);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tableItem {
+	padding-top: 1rem !important;
+	border-top: 1px solid var(--lightGray);
+}
+
+@media (max-width: 990px) {
+	.tableItem:first-child {
+		border-top: none;
+	}
+	.tableItem {
+		padding-bottom: 20px;
+	}
+	.totalPrice:before {
+		content: 'item total :';
+	}
+
+	.txt-alight-total {
+		text-align: right !important;
+	}
+}
+
+body {
+	font-family: 'Lexend Deca', sans-serif !important;
+	background: var(--mainWhite) !important;
+	color: var(--mainDark) !important;
+}
+/* !     TiTle display */
+.text-title {
+	/* display: none; */
+	font-family: 'Oswald', sans-serif;
+
+	text-transform: uppercase;
+
+	border-radius: 25px;
+	padding: 20px 0 !important;
+	background: rgb(255, 255, 255);
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-ms-border-radius: 25px;
+	-o-border-radius: 25px;
+}
+.text-none-background {
+	background: none !important;
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 0.3rem;
+	text-transform: uppercase;
+	margin: 20px;
+}
+
+.total-width {
+	width: 50px !important;
+}
+.tatal-margin {
+	margin: 0;
+}
+
+.text-blue {
+	color: var(--mainBlue);
+}
+.text-bright {
+	color: var(--lightBlue);
+}
+
+.keep-right {
+	position: absolute;
+	right: 0;
+}
+
+.btn-black {
+	background: transparent;
+	text-transform: capitalize;
+	font-size: 0.8rem !important;
+	color: var(--mainDark);
+	border-radius: 10px !important;
+	border: 1px solid var(--mainDark) !important;
+	-webkit-border-radius: 10px !important;
+	-moz-border-radius: 10px !important;
+	-ms-border-radius: 10px !important;
+	-o-border-radius: 10px !important;
+}
+
+.btn-black:hover {
+	//background: var(--mainGray) !important;
+	//color: var(--mainWhite) !important;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+.cart-icon {
+	cursor: pointer;
+	font-size: 1.2rem;
+	color: var(--mainRed);
 }
