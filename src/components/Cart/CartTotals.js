@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PayPalButton from './PayPalButton';
 
-export default function CartTotals({ value }) {
+export default function CartTotals({ value, history }) {
 	const { cartSubTotal, cartTax, cartTotal, clearCart } = value;
 	return (
 		<React.Fragment>
@@ -37,15 +38,16 @@ export default function CartTotals({ value }) {
 						</h5>
 
 						<h5 className="container">
-                            <div className="row col-12"></div>
+							<div className="row col-12"></div>
 							<span className="text-none-background tatal-margin col-md-5 col-sm-5 col-xs">
-								<i style={{color:'var(--mainYellow)'}} className="fas fa-cart-plus" /> total :
+								<i style={{ color: 'var(--mainYellow)' }} className="fas fa-cart-plus" /> total :
 							</span>
 							<strong style={txtAlight} className="col-md-4 col-sm-4 col-xs">
 								$ {cartTotal}
-							</strong> 
+							</strong>
 						</h5>
 
+						<PayPalButton total={cartTotal} clearCart={clearCart} history={history} />
 					</div>
 				</div>
 			</div>
